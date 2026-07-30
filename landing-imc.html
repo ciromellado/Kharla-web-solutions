@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC Calculator Pro - Calculadora de IMC para Adultos y Niños</title>
+    
+    <meta name="description" content="Calculadora profesional de IMC (Índice de Masa Corporal) para adultos y pediatría. Funciona offline. Precisión médica con percentiles.">
+    
+    <meta property="og:title" content="IMC Calculator Pro - Adultos y Pediatría">
+    <meta property="og:description" content="Calcula tu IMC con precisión médica. Disponible para adultos y niños. Funciona sin internet.">
+    <meta property="og:image" content="https://tudominio.com/img/stiker.webp">
+    <meta property="og:url" content="https://tudominio.com">
+    <meta property="og:type" content="website">
+    
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background-color: darkblue;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .hero h2 {
+             color: white;  
+             font-size: 30px; 
+        }
+        
+        .hero h1 span {
+            color: #fbbf24; /* Dorado para destacar "Pro" */
+        }
+        
+        .hero-subtitle {
+            font-size: 22px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+        }
+        
+        .hero-feature::before {
+            content: "✓";
+            background-color: #fbbf24;
+            color: #1e40af;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .btn-hero {
+            display: inline-block;
+            background-color: darkblue;
+            border: 2px solid white;
+            color: white;
+            padding: 18px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 700;
+            transition: all 0.3s;
+            margin: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        .btn-hero:hover {
+            background-color: yellowgreen;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .btn-secondary {
+            background-color: darkblue;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: yellowgreen;
+            color: #2563eb;
+        }
+
+        /* Caja de métodos de pago */
+        .payment-box {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid #fbbf24;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 30px auto;
+            max-width: 650px;
+            text-align: left;
+        }
+
+        .payment-box h3 {
+            color: #fbbf24;
+            margin-bottom: 12px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .payment-method {
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .payment-method strong {
+            color: #fff;
+        }
+
+        .payment-method a {
+            color: #fbbf24;
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px;
+                min-height: auto;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            .hero-features {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .btn-hero {
+                display: block;
+                margin: 10px auto;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">🏥 Precisión Médica</div>
+        
+        <h1>Calculadora de IMC <span>Pro</span></h1>
+        <a href="https://ciromellado.github.io/Kharla-web-solutions/" style="text-decoration: none;"><h2>Kharla Web Solutions</h2></a>
+        
+        <p class="hero-subtitle">
+            <strong>La aplicación Calculadora de IMC ha sido desarrollada bajo la arquitectura de una Progressive Web App (PWA)</strong>, lo que le otorga características técnicas excepcionales pensadas para el entorno clínico: segura y super liviana.
+        </p>
+        
+        <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 10px; margin: 20px 0; text-align: left;">
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+                <li>📊 <strong>Resultados instantáneos y precisos:</strong> Cálculo automatizado del IMC en segundos, adaptado con los estándares internacionales más estrictos.</li>
+                <li>👶 <strong>Enfoque Pediátrico Especializado:</strong> Incorpora curvas y percentiles de crecimiento avalados por la OMS para evaluar de forma correcta a niños y adolescentes.</li>
+                <li>📱 <strong>Diseño 100% Instalable (PWA):</strong> Instálala directamente en la pantalla de inicio de tu teléfono, tablet o computadora como si fuera una aplicación nativa.</li>
+                <li>📶 <strong>Funcionalidad Sin Conexión (Offline):</strong> No depende de una red Wi-Fi o datos móviles activos para funcionar, ideal para consultorios o zonas con señal intermitente.</li>
+            </ul>
+        </div>
+        
+        <div class="hero-features">
+            <div class="hero-feature">Adultos y Niños</div>
+            <div class="hero-feature">Modo Offline</div>
+            <div class="hero-feature">Percentiles OMS</div>
+            <div class="hero-feature">100% Privado</div>
+        </div>
+            
+            <a href="#contacto" class="btn-hero">Quiero la Calculadora</a>
+            <a href="#install-calc" class="btn-hero btn-secondary">Ver la Instalación</a>
+            
+            <div class="payment-box">
+                <h3>💳 Métodos de Donación / Adquisición (¡No importa el monto!)</h3>
+                <div class="payment-method">
+                    🌍 <strong>Internacional (PayPal):</strong> <a href="https://paypal.me/Donacion472" target="_blank">paypal.me/Donacion472</a>
+                </div>
+                <div class="payment-method" style="margin-bottom: 0;">
+                    🇻🇪 <strong>Nacional (Pago Móvil):</strong> 
+                    <br>• Banco: <strong>Banesco</strong>
+                    <br>• Teléfono: <strong>0412-0434710</strong>
+                    <br>• Cédula: <strong>4.567.165</strong>
+                </div>
+                <p style="font-size: 13px; margin-top: 12px; text-align: center; opacity: 0.9;">
+                    💡 <i>Una vez realices tu aporte, envíanos el comprobante por el formulario de abajo para entregarte tu clave de activación de inmediato.</i>
+                </p>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <img src="img/calculadora_imc.webp" alt="Calculadora de indice de masa muscular" style="max-width: 100%; height: auto; border-radius: 8px;">
+                <p style="margin-top: 15px;">Paso a paso de cómo instalar la Calculadora IMC.<br>Después que introduzcas tu clave de activación sigue estos pasos:</p>  
+                
+                <img src="img/install-calc.webp" id="install-calc" alt="paso a paso de como instalar la calculadora imc" style="max-width: 100%; height: auto; border-radius: 8px; margin-top: 20px;">  
+            </div>
+            
+            <p style="margin-top: 30px; font-size: 14px; opacity: 0.8;">
+                Más de 10,000 cálculos realizados • Licencia VIP disponible
+            </p>
+        </div>
+    </section>
+
+    <section id="contacto" style="text-align: center; padding: 4rem 2rem; background-color: #f3f4f6; color: #333;">
+        <h3>¡Contáctanos o Envía tu Comprobante!</h3>
+        <p style="margin-bottom: 2rem;">¿Ya realizaste tu donación? Déjanos tus datos y el capture/referencia del pago para enviarte tu clave de activación de inmediato.</p>
+          
+        <form action="https://formspree.io/f/xzdlnlaq" method="POST" style="max-width: 400px; margin: 0 auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            <div class="form-group" style="margin-bottom: 1.5rem; text-align: left;">
+                <label for="nombre" style="font-weight: bold; display: block; margin-bottom: 0.5rem;">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required style="width: 100%; padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 4px;">
+            </div>
+            
+            <div class="form-group" style="margin-bottom: 1.5rem; text-align: left;">
+                <label for="email" style="font-weight: bold; display: block; margin-bottom: 0.5rem;">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required style="width: 100%; padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 4px;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.5rem; text-align: left;">
+                <label for="mensaje" style="font-weight: bold; display: block; margin-bottom: 0.5rem;">Mensaje / Referencia de Pago:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Indícanos por cuál medio donaste y el número de referencia" style="width: 100%; padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 4px;" required></textarea>
+            </div>
+
+            <button type="submit" style="background-color: #38bdf8; color: #0f172a; padding: 0.75rem 2rem; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; width: 100%;">Enviar Comprobante</button>
+        </form>
+    </section>
+
+</body>
+</html>
