@@ -20,6 +20,9 @@
             padding: 0;
             box-sizing: border-box;
         }
+        html {
+    scroll-behavior: smooth; /* Hace que los enlaces con # bajen suavemente */
+        }
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -242,6 +245,12 @@
                 margin: 10px auto;
                 max-width: 300px;
             }
+            /* Efecto para el botón del formulario */
+form button:hover {
+    background-color: #0ea5e9; /* Un azul un poco más oscuro */
+    transform: translateY(-2px); /* Se eleva un poquito */
+    transition: all 0.3s ease;
+}
         }
     </style>
 </head>
