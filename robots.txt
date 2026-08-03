@@ -1,0 +1,5 @@
+# robots.txt generado por toolspivot.com
+User-agent: *
+Disallow: 
+Disallow: /cgi-bin/
+Sitemap: https://ciromellado.github.io/Kharla-web-solutions/
